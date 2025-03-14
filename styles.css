@@ -186,7 +186,7 @@ button:hover {
 /* Responsive Media Query */
 @media (max-width: 768px) {
     body {
-        flex-direction: column; /* Stack items vertically for smaller screens */
+        /* flex-direction: column; /s* Stack items vertically for smaller screens */
         height: auto; /* Allow scrolling on smaller screens */
     }
 
@@ -194,16 +194,6 @@ button:hover {
         width: 90%; /* Use 90% of the screen width */
         max-width: 100%; /* Ensure it fits within the screen */
         padding: 15px; /* Reduce padding */
-    }
-
-    .tabs {
-        flex-direction: column; /* Stack the tab buttons vertically */
-        gap: 10px; /* Add spacing between buttons */
-    }
-
-    .tab-button {
-        font-size: 12px; /* Slightly smaller font for narrow screens */
-        padding: 8px; /* Adjust padding for smaller screens */
     }
 
     #video-frame {
@@ -226,11 +216,6 @@ button:hover {
 }
 
 @media (max-width: 480px) {
-    .tab-button {
-        font-size: 10px; /* Make fonts smaller for very narrow screens */
-        padding: 6px; /* Adjust padding */
-    }
-
     .video-nav {
         padding: 5px 6px; /* Further reduce nav button padding */
         font-size: 10px; /* Adjust font size */

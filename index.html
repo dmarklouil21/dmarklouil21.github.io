@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CipherScope: Learn and Encrypt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="cont-title">CipherScope: Learn and Encrypt</h2>
+        <div class="tabs">
+            <button class="tab-button" onclick="openTab(event, 'cipher')">Caesar Cipher</button>
+            <button class="tab-button" onclick="openTab(event, 'videos')">Videos</button>
+            <button class="tab-button" onclick="openTab(event, 'discussion')">Discussion</button>
+        </div>
+
+        <div id="cipher" class="tab-content">
+            <h3 class="tab-header">Caesar Cipher</h3>
+            <input type="text" id="text" placeholder="Enter text" />
+            <input type="number" id="shift" placeholder="Shift value" />
+            <button onclick="processText('encrypt')">Encrypt</button>
+            <button onclick="processText('decrypt')">Decrypt</button>
+        </div>
+
+        <div id="videos" class="tab-content">
+            <h3 class="tab-header">Encryption and Decryption</h3>
+            <div class="video-container">
+                <button class="video-nav" onclick="changeVideo(-1)">&#9664;</button>
+                <iframe id="video-frame" width="100%" height="200" 
+                        src="https://www.youtube.com/embed/9chKCUQ8_VQ?si=I802S_IbtLagV2M3" title="YouTube video player" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+                        gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+                <button class="video-nav" onclick="changeVideo(1)">&#9654;</button>
+            </div>
+        </div>        
+
+        <div id="discussion" class="tab-content">
+            <h3 class="tab-header">Discussion Board</h3>
+            <ul>
+                <li>
+                    <a onclick="toggleDiscussion('disc1', this)">Why is encryption important?</a>
+                    <div id="disc1" class="discussion-content">
+                        Encryption plays a vital role in safeguarding sensitive information such as personal data, financial transactions, and government communications. 
+                        It ensures confidentiality by transforming readable data into an unreadable format, only accessible with proper decryption keys. Without encryption, 
+                        cybercriminals could easily intercept and misuse this data.
+                        <br><br><span class="source">Source: National Institute of Standards and Technology (NIST)</span>
+                    </div>
+                </li>
+                <li>
+                    <a onclick="toggleDiscussion('disc2', this)">Can encryption be misused?</a>
+                    <div id="disc2" class="discussion-content">
+                        While encryption secures legitimate communication, it can also be exploited by bad actors for malicious purposes. Criminals sometimes use 
+                        encryption to hide illegal activities like fraud or cyberattacks, posing challenges for law enforcement agencies. This dual-use nature sparks 
+                        debates on monitoring and regulation.
+                        <br><br><span class="source">Source: Cybersecurity & Infrastructure Security Agency (CISA)</span>
+                    </div>
+                </li>
+                <li>
+                    <a onclick="toggleDiscussion('disc3', this)">Ethical concerns about encryption</a>
+                    <div id="disc3" class="discussion-content">
+                        Ethical issues in encryption often revolve around the balance between privacy and security. Some advocate for government-mandated 
+                        backdoors to access encrypted data during investigations, while others argue this could compromise individual privacy and make systems 
+                        vulnerable to exploitation.
+                        <br><br><span class="source">Source: Electronic Frontier Foundation (EFF)</span>
+                    </div>
+                </li>
+                <li>
+                    <a onclick="toggleDiscussion('disc4', this)">Balancing Privacy and Security</a>
+                    <div id="disc4" class="discussion-content">
+                        Encryption is a powerful tool for protecting individual privacy, but it creates challenges for law 
+                        enforcement. End-to-end encryption, for instance, ensures that only the intended recipients can access the 
+                        communication, making it difficult for authorities to intercept illegal activities. Governments are 
+                        debating the creation of backdoors in encryption systems, but this raises the risk of vulnerabilities that 
+                        could be exploited by hackers.
+                        <br><br><span class="source">Source: National Institute of Standards and Technology (NIST)</span>
+                    </div>
+                </li>
+                <li>
+                    <a onclick="toggleDiscussion('disc5', this)">Encryption and Cybercrime</a>
+                    <div id="disc5" class="discussion-content">
+                        While encryption is crucial for safeguarding sensitive data, it can also be used by cybercriminals to carry 
+                        out illegal activities. For example, ransomware attacks encrypt victims' data and demand a ransom for 
+                        decryption. The misuse of encryption for cybercrime presents ethical dilemmas about how to regulate and 
+                        monitor its use.
+                        <br><br><span class="source">Source: Cybersecurity & Infrastructure Security Agency (CISA)</span>
+                    </div>
+                </li>
+                <li>
+                    <a onclick="toggleDiscussion('disc6', this)">Global Disparities in Encryption Policies</a>
+                    <div id="disc6" class="discussion-content">
+                        Different countries have varying stances on encryption. In some nations, governments enforce strict controls, 
+                        while others promote unrestricted encryption. This inconsistency leads to ethical challenges in international 
+                        cooperation against cybercrime and raises concerns about equitable access to encryption technologies worldwide.
+                        <br><br><span class="source">Source: Electronic Frontier Foundation (EFF)</span>
+                    </div>
+                </li>
+                <li>
+                    <a onclick="toggleDiscussion('disc7', this)">Ethical Implications for Activism and Journalism</a>
+                    <div id="disc7" class="discussion-content">
+                        Encryption is a lifeline for activists and journalists operating under oppressive regimes, enabling them to 
+                        communicate securely and protect their sources. However, governments often argue that such protections can also 
+                        shield criminal activities. This creates ethical tensions between universal access to encryption and selective 
+                        restrictions.
+                        <br><br><span class="source">Source: Reporters Without Borders</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal" id="modal">
+        <p id="modal-text"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 

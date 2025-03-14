@@ -128,10 +128,11 @@ function showModal(text, shift, valid, action) {
                             modalText.innerText += 'Text was not provided\n';
                         else if (isNaN(shift))
                             modalText.innerText += 'Shift value was not provided\n';
-                        modalText.innerText += 'Press (esc) key to close the window ...\n';
+                        modalText.innerText += 'Click or tap anywhere to close the window ...\n';
                     }, 1000);
 
-                    document.addEventListener("keydown", closeOnEsc);
+                    // document.addEventListener("keydown", closeOnEsc);
+                    document.addEventListener("click", closeOnClick);
                     return;
                 }
                 else {
@@ -147,17 +148,24 @@ function showModal(text, shift, valid, action) {
             setTimeout(() => {
                 modalText.innerText += textAction + ' complete!\n';
                 modalText.innerText += textAction2 + ' text: ' + text + '\n';
-                modalText.innerText += 'Press (esc) key to close the window ...\n';
+                modalText.innerText += 'Click or tap anywhere to close the window ...\n';
             }, 1000);
 
-            document.addEventListener("keydown", closeOnEsc);
+            document.addEventListener("click", closeOnClick);
         }
     }
 
-    function closeOnEsc(event) {
+    /* function closeOnEsc(event) {
         if (event.keyCode === 27) { // 27 is the keycode for Esc
             modal.style.display = "none";
             document.removeEventListener("keydown", closeOnEsc); // Remove event listener after closing
+        }
+    } */
+
+    function closeOnClick(event) {
+        if (!modal.contains(event.target)) {
+            modal.style.display = "none";
+            document.removeEventListener("click", closeOnClick); // Clean up event listener
         }
     }
 

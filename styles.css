@@ -185,10 +185,10 @@ button:hover {
 
 /* Responsive Media Query */
 @media (max-width: 768px) {
-    body {
+    /* body {
         /* flex-direction: column; /s* Stack items vertically for smaller screens */
-        height: auto; /* Allow scrolling on smaller screens */
-    }
+        /* height: auto; /* Allow scrolling on smaller screens *s/
+    } */
 
     .container {
         width: 90%; /* Use 90% of the screen width */
